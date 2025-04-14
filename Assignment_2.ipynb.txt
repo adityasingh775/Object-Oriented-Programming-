@@ -1,0 +1,3184 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1= Write the importance of functions.\n",
+        "\n",
+        "\n",
+        "Ans= Functions are essential in programming because they improve code organization, reusability, and efficiency. Here’s why they are important:\n",
+        "\n",
+        "1. Modularity – Functions break down complex problems into smaller, manageable parts, making code easier to understand and maintain.\n",
+        "\n",
+        "\n",
+        "2. Code Reusability – A function can be written once and used multiple times, reducing redundancy and saving time.\n",
+        "\n",
+        "\n",
+        "3. Readability & Maintainability – Well-named functions make code more readable and easier to debug or modify.\n",
+        "\n",
+        "\n",
+        "4. Abstraction – They allow programmers to focus on high-level logic without worrying about low-level details every time.\n",
+        "\n",
+        "\n",
+        "5. Efficiency – Functions help optimize memory usage and execution time by avoiding repeated code execution."
+      ],
+      "metadata": {
+        "id": "gdsBw3ZsZmNw"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2= Write a baise function to greet students."
+      ],
+      "metadata": {
+        "id": "uvRPI83MaCM9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "def greet_student(name):\n",
+        "  \"\"\"Function to greet a student by name.\"\"\"\n",
+        "  print(f\"Hello, {name}! Welcome to the class.\")\n",
+        "\n",
+        "      # Example usage\n",
+        "greet_student(\"Alice\")\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sIkFlFaXaUf2",
+        "outputId": "1d3470a9-a936-4ad0-c320-ca3bb575f28f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello, Alice! Welcome to the class.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q3= What is the difference between print and return statements?"
+      ],
+      "metadata": {
+        "id": "f--J344Ya1wS"
+      }
+    },
+    {
+      "source": [
+        "def add(a, b):\n",
+        "    return a + b\n",
+        "\n",
+        "result = add(3, 5)\n",
+        "print(result) # Changed 'print_' to 'print'"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mi5I_akSCDJ8",
+        "outputId": "f42d3ea0-c9b9-49f7-9573-eb60353763a6"
+      },
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4= What are *args and **kwargs?"
+      ],
+      "metadata": {
+        "id": "4nG8hIhBc4mO"
+      }
+    },
+    {
+      "source": [
+        "def greet(*args):\n",
+        "    for name in args:\n",
+        "        print(f\"Hello, {name}!\") # Indented this line to be part of the for loop\n",
+        "\n",
+        "greet(\"Alice\", \"Bob\", \"Charlie\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UKkM0vauCPtf",
+        "outputId": "8afa8a08-22aa-48c4-91e5-d41475e4f65e"
+      },
+      "execution_count": 49,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello, Alice!\n",
+            "Hello, Bob!\n",
+            "Hello, Charlie!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5= Explain the iterator function.\n",
+        "\n",
+        "Ans= An iterator in Python is an object that allows you to loop through a sequence (like a list, tuple, or string) one item at a time."
+      ],
+      "metadata": {
+        "id": "8R5HhM9ldZIf"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q6= Write a code that generates the squares of numbers from 1 to n using a generator."
+      ],
+      "metadata": {
+        "id": "nwY5PsuceQlR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def generate_squares(n):\n",
+        "      for i in range(1, n + 1):\n",
+        "              yield i * i\n",
+        "\n",
+        "# Example usage:\n",
+        "n = 5\n",
+        "for square in generate_squares(n):\n",
+        "   print(square)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XDMywpn5eyNA",
+        "outputId": "cd99585e-3cf4-43eb-a4ad-6bd67769e297"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "4\n",
+            "9\n",
+            "16\n",
+            "25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q7= Write a code that generates palindromic numbers up to n using a generator."
+      ],
+      "metadata": {
+        "id": "T6hyS5Bse_Oi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def generate_palindromes(n):\n",
+        "      for i in range(1, n + 1):\n",
+        "          if str(i) == str(i)[::-1]:\n",
+        "             yield i\n",
+        "\n",
+        " # Example usage:\n",
+        "n = 200\n",
+        "for num in generate_palindromes(n):\n",
+        "  print(num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yUQlGQurfhNF",
+        "outputId": "6a517c0c-7cd7-4142-8bf2-2ee041a4854c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "11\n",
+            "22\n",
+            "33\n",
+            "44\n",
+            "55\n",
+            "66\n",
+            "77\n",
+            "88\n",
+            "99\n",
+            "101\n",
+            "111\n",
+            "121\n",
+            "131\n",
+            "141\n",
+            "151\n",
+            "161\n",
+            "171\n",
+            "181\n",
+            "191\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q8= Write a code that generates even numbers from 2 to n using a generator."
+      ],
+      "metadata": {
+        "id": "ubueGHIcfy75"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def generate_even_numbers(n):\n",
+        "      for i in range(2, n + 1, 2):\n",
+        "              yield i\n",
+        "\n",
+        "# Example usage:\n",
+        "n = 10\n",
+        "for num in generate_even_numbers(n):\n",
+        "    print(num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TxzDbW2WgR7m",
+        "outputId": "06ef8327-da0f-4176-b2fb-338e91eef442"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "4\n",
+            "6\n",
+            "8\n",
+            "10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q9= Write a code that generates powers of two up to n using a generator."
+      ],
+      "metadata": {
+        "id": "GD4OY6C8gZ5K"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def generate_powers_of_two(n):\n",
+        "      for i in range(n + 1):\n",
+        "              yield 2 ** i\n",
+        "\n",
+        "# Example usage:\n",
+        "n = 5\n",
+        "for power in generate_powers_of_two(n):\n",
+        "    print(power)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FNDInRU7g7zi",
+        "outputId": "d8495f6e-6af5-4dd4-aea2-1c8d9ccabd32"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "4\n",
+            "8\n",
+            "16\n",
+            "32\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q10= Write a code that generates prime numbers up to n using a generator."
+      ],
+      "metadata": {
+        "id": "n7y_TKuEhDWQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "def is_prime(num):\n",
+        "  if num < 2:\n",
+        "    return False\n",
+        "  for i in range(2, int(num**0.5) + 1):\n",
+        "     if num % i == 0:\n",
+        "        return False\n",
+        "     return True\n",
+        "\n",
+        "def prime_generator(n):\n",
+        "  for num in range(2, n + 1):\n",
+        "    if is_prime(num):\n",
+        "     yield num\n",
+        "\n",
+        "n = int(input(\"Enter a number: \"))\n",
+        "print(\"Prime numbers up to\", n, \"are:\")\n",
+        "for prime in prime_generator(n):\n",
+        "  print(prime)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WCsXcLR3lGIU",
+        "outputId": "c69d3766-b3e6-464a-9753-6cd63defe00f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 30\n",
+            "Prime numbers up to 30 are:\n",
+            "5\n",
+            "7\n",
+            "9\n",
+            "11\n",
+            "13\n",
+            "15\n",
+            "17\n",
+            "19\n",
+            "21\n",
+            "23\n",
+            "25\n",
+            "27\n",
+            "29\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q11= Write a code that uses a lambda function to calculate the sum of two numbers."
+      ],
+      "metadata": {
+        "id": "Vktd-b_Cl_CA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sum_two = lambda a, b: a + b\n",
+        "\n",
+        "# Example usage:\n",
+        "result = sum_two(5, 7)\n",
+        "print(\"Sum:\", result)"
+      ],
+      "metadata": {
+        "id": "GDpMfGjcmeme",
+        "outputId": "7fba71a1-0e7f-4551-e027-71a67d972b4e",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sum: 12\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q12= Write a code that uses a lambda function to calculate the square of a given number."
+      ],
+      "metadata": {
+        "id": "BMP-3dcHdVCE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "square = lambda x: x ** 2\n",
+        "\n",
+        "# Example usage\n",
+        "num = 5\n",
+        "print(\"The square of\", num, \"is\", square(num))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8x8Rk_PkduZU",
+        "outputId": "f39265f9-7b86-42a5-dba8-56e5523d611e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The square of 5 is 25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q13= Write a code that uses a lambda function to check whether a given number is even or odd."
+      ],
+      "metadata": {
+        "id": "5E60toSvd5o6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "check_even_odd = lambda x: \"Even\" if x % 2 == 0 else \"Odd\"\n",
+        "\n",
+        "# Example usage\n",
+        "num = 7\n",
+        "print(f\"The number {num} is\", check_even_odd(num))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Vv_WGwEqeSMn",
+        "outputId": "efb4e1b5-dd5a-4461-95ed-c47c10762921"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The number 7 is Odd\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q15= Write a code that uses a lambda function to concatenate two strings."
+      ],
+      "metadata": {
+        "id": "yrTwMkZweXhF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "concat_strings = lambda a, b: a + b\n",
+        "\n",
+        "# Example usage\n",
+        "str1 = \"Hello, \"\n",
+        "str2 = \"World!\"\n",
+        "print(\"Concatenated string:\", concat_strings(str1, str2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qib6UpX4fCNX",
+        "outputId": "97178108-572d-47f1-aae9-84f4489bbfdb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Concatenated string: Hello, World!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q16= Write a code that uses a lambda function to find the maximum of three given numbers."
+      ],
+      "metadata": {
+        "id": "hm83yNvHfKUk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "max_of_three = lambda a, b, c: a if a > b and a > c else (b if b > c else c)\n",
+        "\n",
+        "# Example usage\n",
+        "num1 = 10\n",
+        "num2 = 25\n",
+        "num3 = 15\n",
+        "print(\"The maximum number is:\", max_of_three(num1, num2, num3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jw-mSor4fsur",
+        "outputId": "1c4bd6a5-b458-4867-9c11-fb8f85aff5ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The maximum number is: 25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q17= Write a code that generates the squares of even numbers from a given list."
+      ],
+      "metadata": {
+        "id": "X3rzk3ILfuLK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+        "\n",
+        "even_squares = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, numbers)))\n",
+        "\n",
+        "print(\"Squares of even numbers:\", even_squares)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Dbuu_9xdgRbG",
+        "outputId": "df4961c1-f09e-405d-b93e-dd538fba173d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Squares of even numbers: [4, 16, 36, 64, 100]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q18= Write a code that calculates the product of positive numbers from a given list."
+      ],
+      "metadata": {
+        "id": "TEAmEbyzgUOQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from functools import reduce\n",
+        "\n",
+        "numbers = [-2, 3, 5, -1, 0, 4]\n",
+        "\n",
+        "positive_product = reduce(lambda x, y: x * y, filter(lambda n: n > 0, numbers))\n",
+        "\n",
+        "print(\"Product of positive numbers:\", positive_product)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ykXagy1Fg3y6",
+        "outputId": "88b26dcf-6976-488e-c16f-c733b17581c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Product of positive numbers: 60\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q19= Write a code that doubles the values of odd numbers from a given list."
+      ],
+      "metadata": {
+        "id": "CcXBkLdvg_89"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1, 2, 3, 4, 5, 6, 7]\n",
+        "\n",
+        "doubled_odds = list(map(lambda x: x * 2 if x % 2 != 0 else x, numbers))\n",
+        "\n",
+        "print(\"List with doubled odd numbers:\", doubled_odds)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ncyKLo-8hZNA",
+        "outputId": "a096c0d2-1539-4ec3-e0d6-2e101975b4ae"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "List with doubled odd numbers: [2, 2, 6, 4, 10, 6, 14]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q20= Write a code that calculates the sum cube of numbers from a given list."
+      ],
+      "metadata": {
+        "id": "b8o1Dl3AhbeQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = [1, 2, 3, 4, 5]\n",
+        "\n",
+        "sum_of_cubes = sum(map(lambda x: x**3, numbers))\n",
+        "\n",
+        "print(\"Sum of cubes:\", sum_of_cubes)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y5dh0qqOh6VT",
+        "outputId": "fdbe75a9-a111-48e2-cff5-bb2cd4be21c5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sum of cubes: 225\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q21= Write a code that filters out prime numbers from a given list."
+      ],
+      "metadata": {
+        "id": "g0yiQCFph8DP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_prime(n):\n",
+        "  if n < 2:\n",
+        "   return False\n",
+        "  for i in range(2, int(n**0.5) + 1):\n",
+        "   if n % i == 0:\n",
+        "    return False\n",
+        "    return True\n",
+        "\n",
+        "numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]\n",
+        "\n",
+        "non_primes = list(filter(lambda x: not is_prime(x), numbers))\n",
+        "\n",
+        "print(\"Non-prime numbers:\", non_primes)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eij9aHcIk2LE",
+        "outputId": "4a7d6228-63d5-4835-cf86-92046ab24f1c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Non-prime numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q22= Write a code that uses a lambda function to calculate the sum of two numbers."
+      ],
+      "metadata": {
+        "id": "sIIjoxwAlr76"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sum_two = lambda a, b: a + b\n",
+        "\n",
+        "# Example usage\n",
+        "num1 = 10\n",
+        "num2 = 15\n",
+        "print(\"The sum is:\", sum_two(num1, num2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nzKl8WiEnRa_",
+        "outputId": "e1650abb-7081-4183-ca35-ca33c039d444"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The sum is: 25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q23= Write a code that uses a lambda function to calculate the square of a given number."
+      ],
+      "metadata": {
+        "id": "zQk6gGImnU43"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "square = lambda x: x ** 2\n",
+        "\n",
+        "# Example usage\n",
+        "num = 6\n",
+        "print(\"The square of\", num, \"is\", square(num))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g_G9mJyWn80y",
+        "outputId": "246f45e1-86c3-48aa-a4af-0d1df76b07c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The square of 6 is 36\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q24= Write a code that uses a lambda function to check whether a given number is even or odd."
+      ],
+      "metadata": {
+        "id": "hh2h4rOzn_OV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "check_even_odd = lambda x: \"Even\" if x % 2 == 0 else \"Odd\"\n",
+        "\n",
+        "# Example usage\n",
+        "num = 9\n",
+        "print(f\"The number {num} is\", check_even_odd(num))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CypikM-CoWF-",
+        "outputId": "742ab47c-5d45-4c76-d00a-ae8e36a771ab"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The number 9 is Odd\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q25= Write a code that uses a lambda function to concatenate two strings."
+      ],
+      "metadata": {
+        "id": "62DzW8rEoYTM"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "concat = lambda a, b: a + b\n",
+        "\n",
+        "# Example usage\n",
+        "str1 = \"Good \"\n",
+        "str2 = \"Morning\"\n",
+        "print(\"Concatenated string:\", concat(str1, str2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "r-w6X34eosUv",
+        "outputId": "e3931947-126c-475e-c7a0-25d3a08ca277"
+      },
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Concatenated string: Good Morning\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q26= Write a code that uses a lambda function to find the maximum of three given numbers."
+      ],
+      "metadata": {
+        "id": "JvY-8jMro-Sw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "max_of_three = lambda a, b, c: a if a > b and a > c else (b if b > c else c)\n",
+        "\n",
+        "# Example usage\n",
+        "num1 = 12\n",
+        "num2 = 25\n",
+        "num3 = 19\n",
+        "print(\"The maximum number is:\", max_of_three(num1, num2, num3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LZxwCVIepQ_n",
+        "outputId": "80049062-d9a7-49ca-af21-77fec8fe6074"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The maximum number is: 25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q27= What is encapsulation in oop?"
+      ],
+      "metadata": {
+        "id": "OyJhJ8x3pVsL"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ANS= Encapsulation in Object-Oriented Programming (OOP) is a concept where an object's internal state (data) and behavior (methods) are bundled together and hidden from the outside world. This helps to protect the object's internal implementation details and provides a controlled interface for interacting with the object."
+      ],
+      "metadata": {
+        "id": "kW6qWJMUdLrJ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q28= Explain the use of access modifiers in python classes."
+      ],
+      "metadata": {
+        "id": "QCdVhVWfqe06"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans= Access modifiers in Python are used to control the visibility of class members (attributes and methods). Although Python does not have strict access control like some other languages, it follows certain naming conventions to indicate the intended level of access."
+      ],
+      "metadata": {
+        "id": "Ez_40vXbeBIQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q29= What is inheritance in oop?"
+      ],
+      "metadata": {
+        "id": "_hnt8YS4LjUn"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ANS=Inheritance in Object-Oriented Programming (OOP) is a concept where a new class, called the subclass or derived class, inherits the properties and behavior of an existing class, called the superclass or base class. The subclass inherits all the attributes and methods of the superclass and can also add new attributes and methods or override the ones inherited from the superclass."
+      ],
+      "metadata": {
+        "id": "o9N5OJW9MlgA"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q30= Define polymorphism in opp."
+      ],
+      "metadata": {
+        "id": "3HJWHKAiNGOG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "  def speak(self):\n",
+        "    print(\"Animal speaks\")\n",
+        "\n",
+        "    class Dog(Animal):\n",
+        "      def speak(self):\n",
+        "        print(\"Dog barks\")\n",
+        "\n",
+        "    class Cat(Animal):\n",
+        "      def speak(self):\n",
+        "        print(\"Cat meows\")\n",
+        "\n",
+        "# Same method, different behavior\n",
+        "    for animal in [Dog(), Cat()]:\n",
+        "        animal.speak()"
+      ],
+      "metadata": {
+        "id": "1wRKMtBCNcXf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q31= Explain method overriding in python."
+      ],
+      "metadata": {
+        "id": "t5ZeVFvQN1To"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "  def speak(self):\n",
+        "    print(\"Animal makes a sound\")\n",
+        "\n",
+        "  class Dog(Animal):\n",
+        "   def speak(self):\n",
+        "    print(\"Dog barks\")\n",
+        "\n",
+        "  d = Dog()\n",
+        "  d.speak()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vpx9UYEaOMg8",
+        "outputId": "d0a2d951-496b-4738-81d7-02877cb02347"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dog barks\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q32= Define a parent class Animal with a method make_sound that prints \"Generic animal sound\". Create a child class Dog inheriting from Animal with a method make_sound that prints \"Woof!\"."
+      ],
+      "metadata": {
+        "id": "PV2ZkQI3Oizs"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "      def make_sound(self):\n",
+        "              print(\"Generic animal sound\")\n",
+        "\n",
+        "      class Dog(Animal):\n",
+        "        def make_sound(self):\n",
+        "           print(\"Woof!\")\n",
+        "\n",
+        "  # Testing\n",
+        "      a = Animal()\n",
+        "      a.make_sound()\n",
+        "\n",
+        "      d = Dog()\n",
+        "      d.make_sound()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "URMyIKmdU6mj",
+        "outputId": "4a5c1685-ad5c-45ba-9942-28da40dfc53a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Generic animal sound\n",
+            "Woof!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q33= Define a method movie in the Animal class that prints \"Animal movie\". Override the move method in the Dog class to print \"Dog runs.\""
+      ],
+      "metadata": {
+        "id": "0a0-Q-IHQXGT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "      def move(self):\n",
+        "         print(\"Animal moves\")\n",
+        "\n",
+        "      class Dog(Animal):\n",
+        "       def move(self):\n",
+        "        print(\"Dog runs\")\n",
+        "\n",
+        "  # Testing\n",
+        "      a = Animal()\n",
+        "      a.move()\n",
+        "\n",
+        "      d = Dog()\n",
+        "      d.move()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rrnwZq1dVvtO",
+        "outputId": "9df7d228-63f4-407d-968b-97b1767b1fe0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Animal moves\n",
+            "Dog runs\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q34= Create a class Mammal with a method reproduce that prints \"Giving birth to live young.\"Create a class DogMammal inheriting from both Dog and Mammal."
+      ],
+      "metadata": {
+        "id": "ecwB2HFjWI2o"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Mammal:\n",
+        " def reproduce(self):\n",
+        "  print(\"Giving birth to live young\")\n",
+        "\n",
+        "class Dog:\n",
+        "  def bark(self):\n",
+        "    print(\"Woof!\")\n",
+        "class DogMammal(Dog, Mammal):\n",
+        "\n",
+        "# Testing\n",
+        "\n",
+        "   dm = DogMammal()\n",
+        "   dm.bark()\n",
+        "   dm.reproduce()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "S6XUdNcqXD7K",
+        "outputId": "f22ecddd-ea5a-4715-96cd-aa7f5503c845"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dog barks.\n",
+            "Giving birth to live young.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q35= Create a class GermanShepherd inheriting from Dog and override the make_sound method to print \"Bark!\""
+      ],
+      "metadata": {
+        "id": "O5e9o6lPwoLC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Dog:\n",
+        "  def make_sound(self):\n",
+        "   print(\"Woof!\")\n",
+        "\n",
+        "class GermanShepherd(Dog):\n",
+        "  def make_sound(self):\n",
+        "    print(\"Bark!\")\n",
+        "\n",
+        "# Example usage:\n",
+        "german_shepherd = GermanShepherd()\n",
+        "german_shepherd.make_sound()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-BpFmktQxgRG",
+        "outputId": "ca7c3e1a-31a7-42f9-c405-734f4a7a9642"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bark!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q36= Define constructors in both the Animal and Dog classes with different initialization parameters."
+      ],
+      "metadata": {
+        "id": "6hBh6tKHx1aU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "  def __init__(self, species):\n",
+        "   self.species = species\n",
+        "   print(f\"Animal created. Species: {self.species}\")\n",
+        "\n",
+        "class Dog(Animal):\n",
+        "  def __init__(self, species, breed):\n",
+        "     super().__init__(species)  # Call the parent class constructor\n",
+        "     self.breed = breed\n",
+        "     print(f\"Dog created. Breed: {self.breed}\")\n",
+        "\n",
+        " # Example usage:\n",
+        "  dog = Dog(\"Mammal\", \"German Shepherd\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "OJBgBM0Wze98",
+        "outputId": "7bbe8fc5-ffc5-48ab-a70a-773e911522a2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Animal created. Species: Mammal\n",
+            "Dog created. Breed: German Shepherd\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q37= What is abstraction in Python? How is it implemented?\n",
+        "\n",
+        "\n",
+        "Ans= Abstraction is a programming concept that hides the implementation details of a class or method and only exposes the essential functionalities to the user. It focuses on what an object does instead of how it does it.\n",
+        "\n",
+        "Abstraction is a fundamental principle of Object-Oriented Programming (OOP) and is implemented in Python using abstract classes and abstract methods provided by the abc module."
+      ],
+      "metadata": {
+        "id": "LM1tnbzn0JSa"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q38= Explain the importance of abstraction in object-oriented programming."
+      ],
+      "metadata": {
+        "id": "3zUcakak08Gq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans= Abstraction is a cornerstone of object-oriented programming that provides several key benefits in designing scalable and maintainable software. Here’s why it is important:"
+      ],
+      "metadata": {
+        "id": "3Vlg0hEp1rJT"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q39= How are abstract methods different from regular method in Python?"
+      ],
+      "metadata": {
+        "id": "ujutnInn1tfr"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Abstract methods and regular methods in Python are different in the following ways:\n",
+        "\n",
+        "*Abstract Methods*\n",
+        "1. *Declaration*: Abstract methods are declared using the `@abstractmethod` decorator from the `abc` module.\n",
+        "2. *Implementation*: Abstract methods do not have an implementation in the abstract class.\n",
+        "3. *Subclass Implementation*: Abstract methods must be implemented by any non-abstract subclass.\n",
+        "4. *Instantiation*: A class with abstract methods cannot be instantiated.\n",
+        "\n",
+        "*Regular Methods*\n",
+        "1. *Declaration*: Regular methods are declared without any special decorator.\n",
+        "2. *Implementation*: Regular methods have an implementation in the class.\n",
+        "3. *Subclass Implementation*: Regular methods can be overridden by subclasses, but it's not required.\n",
+        "4. *Instantiation*: A class with regular methods can be instantiated."
+      ],
+      "metadata": {
+        "id": "Ts1JFvxN2lHz"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q40= How con you achieve abstraction using interfaces in Python?"
+      ],
+      "metadata": {
+        "id": "nWQlAri32881"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans= In Python, interfaces are typically implemented using abstract classes with only abstract methods. An interface is a blueprint for classes, specifying a set of methods that must be implemented without providing any implementation details. This ensures abstraction by defining \"what\" a class should do, leaving the \"how\" to the derived classes."
+      ],
+      "metadata": {
+        "id": "YXIPffmW3hIR"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q41= How Can you provide an example of how abstraction can be utilized to create a common interface for a group of related classes in python?\n"
+      ],
+      "metadata": {
+        "id": "6FyJRlh_3odi"
+      }
+    },
+    {
+      "source": [
+        "from abc import ABC, abstractmethod\n",
+        "\n",
+        "# Abstract class (Interface)\n",
+        "class Shape(ABC):\n",
+        "    @abstractmethod\n",
+        "    def calculate_area(self):\n",
+        "        pass\n",
+        "\n",
+        "# Concrete class for Circle\n",
+        "class Circle(Shape):\n",
+        "    def __init__(self, radius):\n",
+        "        self.radius = radius\n",
+        "\n",
+        "    def calculate_area(self):\n",
+        "        return 3.14 * self.radius * self.radius\n",
+        "\n",
+        "# Concrete class for Rectangle\n",
+        "class Rectangle(Shape): # Dedented to be at the same level as Circle\n",
+        "    def __init__(self, width, height):\n",
+        "        self.width = width\n",
+        "        self.height = height\n",
+        "\n",
+        "    def calculate_area(self):\n",
+        "        return self.width * self.height\n",
+        "\n",
+        "# Concrete class for Triangle\n",
+        "class Triangle(Shape): # Dedented to be at the same level as Circle and Rectangle\n",
+        "    def __init__(self, base, height):\n",
+        "        self.base = base\n",
+        "        self.height = height\n",
+        "\n",
+        "    def calculate_area(self):\n",
+        "        return 0.5 * self.base * self.height\n",
+        "\n",
+        "# Example usage:\n",
+        "shapes = [Circle(5), Rectangle(4, 6), Triangle(3, 7)]\n",
+        "\n",
+        "for shape in shapes:\n",
+        "    print(f\"{shape.__class__.__name__} area: {shape.calculate_area()}\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BviDX9DIdyXo",
+        "outputId": "7ace96ee-081c-4fa8-d6df-24b0bb9533b8"
+      },
+      "execution_count": 383,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Circle area: 78.5\n",
+            "Rectangle area: 24\n",
+            "Triangle area: 10.5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q42= How does python achieve polymorphism through method overriding?"
+      ],
+      "metadata": {
+        "id": "ZthVtnAD8BzV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "  def make_sound(self):\n",
+        "   print(\"Some generic animal sound\")\n",
+        "\n",
+        "class Dog(Animal):\n",
+        "  def make_sound(self):\n",
+        "   print(\"Bark!\")\n",
+        "\n",
+        "class Cat(Animal):\n",
+        "   def make_sound(self):\n",
+        "    print(\"Meow!\")\n",
+        "\n",
+        "# Polymorphism in action\n",
+        "   def animal_sound(animal):\n",
+        "    animal.make_sound()\n",
+        "\n",
+        " # Example usage\n",
+        "   animals = [Dog(), Cat(), Animal()]\n",
+        "\n",
+        "   for animal in animals:\n",
+        "    animal_sound(animal)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BmOOFRYh99Lq",
+        "outputId": "a1e5b3a9-290d-4773-a355-79c809635e38"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bark!\n",
+            "Meow!\n",
+            "Some generic animal sound\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q43= Define a base class with a method and a subclass that overrides the methods."
+      ],
+      "metadata": {
+        "id": "zKCzl1rE_K_N"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:  # Base class\n",
+        "  def make_sound(self):  # Method in the base class\n",
+        "    print(\"Some generic animal sound\")\n",
+        "\n",
+        "class Dog(Animal):  # Subclass\n",
+        " def make_sound(self):  # Overriding the base class method\n",
+        "  print(\"Bark!\")\n",
+        "\n",
+        "# Example usage\n",
+        " animal = Animal()\n",
+        " animal.make_sound()  # Output: Some generic animal sound\n",
+        "\n",
+        " dog = Dog()\n",
+        " dog.make_sound()  # Output: Bark!"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ky8aDV5__nWV",
+        "outputId": "f5101872-5275-45be-96dd-fc8b689d84e4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Some generic animal sound\n",
+            "Bark!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q44= Define a base class and multiple subclass with overrides method."
+      ],
+      "metadata": {
+        "id": "Je9yGLJX_5HR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:  # Base class\n",
+        "   def make_sound(self):  # Method in the base class\n",
+        "    print(\"Some generic animal sound\")\n",
+        "\n",
+        "class Dog(Animal):  # Subclass 1\n",
+        "   def make_sound(self):  # Overriding the method\n",
+        "    print(\"Bark!\")\n",
+        "\n",
+        "class Cat(Animal):  # Subclass 2\n",
+        "  def make_sound(self):  # Overriding the method\n",
+        "   print(\"Meow!\")\n",
+        "\n",
+        "class Bird(Animal):  # Subclass 3\n",
+        "  def make_sound(self):  # Overriding the method\n",
+        "    print(\"Chirp!\")\n",
+        "\n",
+        "# Example usage\n",
+        "animals = [Dog(), Cat(), Bird(), Animal()]\n",
+        "\n",
+        "for animal in animals:\n",
+        " animal.make_sound()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_7UEK-BXAaQA",
+        "outputId": "0c7a9843-5df5-4353-c844-d6e8079b2a08"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bark!\n",
+            "Meow!\n",
+            "Chirp!\n",
+            "Some generic animal sound\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q45= How does polymorphism improve code readability and reusability?"
+      ],
+      "metadata": {
+        "id": "sLrCANCIAy2e"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        " def make_sound(self):\n",
+        "              pass\n",
+        "\n",
+        "class Dog(Animal):\n",
+        "  def make_sound(self):\n",
+        "   print(\"Bark!\")\n",
+        "\n",
+        "class Cat(Animal):\n",
+        "  def make_sound(self):\n",
+        "   print(\"Meow!\")\n",
+        "\n",
+        "  def animal_sound(animal):\n",
+        "    animal.make_sound()\n",
+        "\n",
+        "# List of animals\n",
+        "  animals = [Dog(), Cat()]\n",
+        "\n",
+        "  for animal in animals:\n",
+        "   animal_sound(animal)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7ciwWq9yDG1J",
+        "outputId": "c6070360-c3c3-4b58-9dbf-705bfae8323a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bark!\n",
+            "Meow!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q46= Describe how python supports polymorphism with duck typing."
+      ],
+      "metadata": {
+        "id": "dlXPCfCmDidp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Dog:\n",
+        "  def make_sound(self):\n",
+        "   print(\"Bark!\")\n",
+        "\n",
+        "class Cat:\n",
+        "   def make_sound(self):\n",
+        "    print(\"Meow!\")\n",
+        "\n",
+        "class Duck:\n",
+        "  def make_sound(self):\n",
+        "   print(\"Quack!\")\n",
+        "\n",
+        " # Function that demonstrates polymorphism\n",
+        "  def animal_sound(animal):\n",
+        " # Doesn't check type, only if `make_sound` method exists\n",
+        "    animal.make_sound()\n",
+        "\n",
+        " # Example usage\n",
+        "    animals = [Dog(), Cat(), Duck()]\n",
+        "\n",
+        "  for animal in animals:\n",
+        "      animal_sound(animal)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xBb-UVsoESrY",
+        "outputId": "35d86fc8-a9af-449b-bd92-575c40ac36bb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Bark!\n",
+            "Meow!\n",
+            "Chirp!\n",
+            "Some generic animal sound\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q47= How do you achieve encapsulation in python?"
+      ],
+      "metadata": {
+        "id": "4tIO_04hGK-m"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "  def __init__(self, name):\n",
+        "   self.name = name  # Public attribute\n",
+        "\n",
+        "  def display_name(self):\n",
+        "   print(f\"Employee Name: {self.name}\")\n",
+        "\n",
+        "emp = Employee(\"Alice\")\n",
+        "print(emp.name)  # Accessing public attribute\n",
+        "emp.display_name()  # Accessing public method"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g6SBNtzMHhO2",
+        "outputId": "5603b6fe-6d98-4f09-b9a2-f6be9c44b83b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n",
+            "Employee Name: Alice\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q48= Can encapsulation be bypassed in python? If so,how?"
+      ],
+      "metadata": {
+        "id": "LoLBggYkILN3"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "M1fn0K_KJTpX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "   def __init__(self, name, salary):\n",
+        "     self.__salary = salary\n",
+        "\n",
+        "emp = Employee(\"Alice\", 50000)\n",
+        "\n",
+        " # Accessing private attribute using getattr\n",
+        "print(getattr(emp, \"_Employee__salary\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5wwqYrtoIvrE",
+        "outputId": "1eeb0431-7139-4c9e-e7d3-eb6f1b690f5a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "50000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q49= Implement a class with Bank account with a private balance attributes.Include methods to deposit, withdraw,and check the balance."
+      ],
+      "metadata": {
+        "id": "zM9RmgMkJafb"
+      }
+    },
+    {
+      "source": [
+        "class BankAccount:\n",
+        "    def __init__(self, initial_balance=0):\n",
+        "        \"\"\"Initialize the bank account with a private balance.\"\"\"\n",
+        "        self.__balance = initial_balance  # Private attribute\n",
+        "\n",
+        "    def deposit(self, amount):\n",
+        "        \"\"\"Deposit a specified amount to the account.\"\"\"\n",
+        "        if amount > 0:\n",
+        "            self.__balance += amount\n",
+        "            print(f\"Deposited: ${amount}\")\n",
+        "        else:\n",
+        "            print(\"Deposit amount must be positive.\")\n",
+        "\n",
+        "    def withdraw(self, amount):\n",
+        "        \"\"\"Withdraw a specified amount from the account.\"\"\"\n",
+        "        if amount > 0:\n",
+        "            if self.__balance >= amount:\n",
+        "                self.__balance -= amount\n",
+        "                print(f\"Withdrew: ${amount}\")\n",
+        "            else:\n",
+        "                print(\"Insufficient funds.\")\n",
+        "        else:\n",
+        "            print(\"Withdrawal amount must be positive.\")\n",
+        "\n",
+        "    def check_balance(self):\n",
+        "        \"\"\"Return the current balance.\"\"\"\n",
+        "        return self.__balance\n",
+        "\n",
+        "\n",
+        "# Example usage:\n",
+        "account = BankAccount(100)  # Initialize with $100\n",
+        "account.deposit(50)         # Deposit $50\n",
+        "print(f\"Balance: ${account.check_balance()}\")  # Check balance\n",
+        "account.withdraw(30)        # Withdraw $30\n",
+        "print(f\"Balance: ${account.check_balance()}\")  # Check balance\n",
+        "account.withdraw(200)       # Attempt to withdraw $200 (insufficient funds)"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G2Dwg5k-dkIz",
+        "outputId": "0d333208-190b-4829-da38-3738ca164eb3"
+      },
+      "execution_count": 379,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Deposited: $50\n",
+            "Balance: $150\n",
+            "Withdrew: $30\n",
+            "Balance: $120\n",
+            "Insufficient funds.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q50=Develop a person class with private attributes name and email, and methods set and get the email."
+      ],
+      "metadata": {
+        "id": "LFp6KUra45uU"
+      }
+    },
+    {
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, email):\n",
+        "        \"\"\"Initialize the Person class with private attributes name and email.\"\"\"\n",
+        "        self.__name = name  # Private attribute for name\n",
+        "        self.__email = email  # Private attribute for email\n",
+        "\n",
+        "    def set_email(self, new_email):\n",
+        "        \"\"\"Set a new email for the person.\"\"\"\n",
+        "        if \"@\" in new_email and \".\" in new_email:  # Simple validation for email format\n",
+        "            self.__email = new_email\n",
+        "            print(\"Email updated successfully.\")\n",
+        "        else:\n",
+        "            print(\"Invalid email format.\")\n",
+        "\n",
+        "    def get_email(self):\n",
+        "        \"\"\"Get the current email of the person.\"\"\"\n",
+        "        return self.__email\n",
+        "\n",
+        "    def get_name(self):\n",
+        "        \"\"\"Get the name of the person.\"\"\"\n",
+        "        return self.__name\n",
+        "\n",
+        "\n",
+        "# Example usage:\n",
+        "person = Person(\"John Doe\", \"john.doe@example.com\")  # Initialize with name and email\n",
+        "print(f\"Name: {person.get_name()}\")  # Get and display name\n",
+        "print(f\"Email: {person.get_email()}\")  # Get and display email\n",
+        "\n",
+        "person.set_email(\"new.email@example.com\")  # Update email\n",
+        "print(f\"Updated Email: {person.get_email()}\")  # Get and display updated email\n",
+        "\n",
+        "person.set_email(\"invalid-email\")  # Attempt to set an invalid email"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UMANIOTwdAVQ",
+        "outputId": "f5867ecd-38f0-4fd2-e63e-63d485e1577f"
+      },
+      "execution_count": 377,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: John Doe\n",
+            "Email: john.doe@example.com\n",
+            "Email updated successfully.\n",
+            "Updated Email: new.email@example.com\n",
+            "Invalid email format.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q51= Why is Encapsulation considered a pillar of object-oriented programming (OOP)?"
+      ],
+      "metadata": {
+        "id": "a1MXfcaB8Inc"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ANS= Encapsulation is considered a pillar of object-oriented programming (OOP) because it ensures that the internal state and implementation details of an object are hidden from the outside world. This is achieved by restricting direct access to an object's attributes and methods and providing controlled access through public methods. Here are the main reasons why encapsulation is essential in OOP:\n",
+        "\n",
+        "1. Data Protection and Security\n",
+        "\n",
+        "Encapsulation protects an object's internal state by making attributes private. External code cannot modify these attributes directly, reducing the risk of accidental or unauthorized changes.\n",
+        "\n",
+        "By exposing only necessary methods, encapsulation minimizes the potential for misuse of an object's data.\n",
+        "\n",
+        "\n",
+        "2. Improved Code Maintainability\n",
+        "\n",
+        "Encapsulation allows developers to change the internal implementation of a class without affecting external code that uses the class. This ensures that changes can be made more easily and with less risk of breaking existing functionality.\n",
+        "\n",
+        "\n",
+        "3. Encourages Modularity\n",
+        "\n",
+        "By keeping an object's implementation details separate from its interface, encapsulation promotes modular design. Each class can focus on a specific functionality, making the system easier to understand and manage.\n",
+        "\n",
+        "\n",
+        "4. Enhanced Flexibility\n",
+        "\n",
+        "Through encapsulation, you can enforce rules and constraints on how data is accessed or modified (e.g., validation logic in setter methods). This ensures the object remains in a valid state throughout its lifecycle."
+      ],
+      "metadata": {
+        "id": "eDyGmGe28tAv"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q52= Create a decorator in python that adds functionality to a simple function by printing a message before\n",
+        "and after the function execution."
+      ],
+      "metadata": {
+        "id": "dEzpA2Vv8559"
+      }
+    },
+    {
+      "source": [
+        "def print_message_decorator(func):\n",
+        "    \"\"\"Decorator to print a message before calling the function\"\"\"\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(\"Executing the function...\")\n",
+        "        return func(*args, **kwargs)  # Call the original function\n",
+        "    return wrapper  # This line was not indented, causing the error\n",
+        "\n",
+        "# Example usage:\n",
+        "@print_message_decorator\n",
+        "def greet(name):\n",
+        "    print(f\"Hello, {name}!\")\n",
+        "greet(\"Alice\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QbOeqxkvcWbT",
+        "outputId": "1e63b889-5735-489f-e88f-615e7bf7e18d"
+      },
+      "execution_count": 372,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Executing the function...\n",
+            "Hello, Alice!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q53= Modify the decorator to accept arguments and print the function name along with the message."
+      ],
+      "metadata": {
+        "id": "8ghVVghV-5Vo"
+      }
+    },
+    {
+      "source": [
+        "def print_message_decorator_with_args(message):\n",
+        "    \"\"\"Decorator to print a custom message and the function name before calling the function.\"\"\"\n",
+        "    def decorator(func):\n",
+        "        def wrapper(*args, **kwargs):\n",
+        "            print(f\"{message} - Executing function: {func.__name__}\")\n",
+        "            return func(*args, **kwargs)\n",
+        "        return wrapper # This line was incorrectly indented before. Now it's properly indented.\n",
+        "    return decorator # This line was incorrectly indented before. Now it's properly indented.\n",
+        "\n",
+        "# Example usage:\n",
+        "@print_message_decorator_with_args(\"Custom Message\")\n",
+        "def greet(name):\n",
+        "    print(f\"Hello, {name}!\")\n",
+        "\n",
+        "@print_message_decorator_with_args(\"Another Message\")\n",
+        "def add(a, b):\n",
+        "    return a + b\n",
+        "\n",
+        "greet(\"Alice\")  # Call the decorated greet function\n",
+        "result = add(5, 3)  # Call the decorated add function\n",
+        "print(f\"Result of add: {result}\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DeakcgHKb9t3",
+        "outputId": "65a63331-8e25-4646-c931-db2ca055023d"
+      },
+      "execution_count": 370,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Custom Message - Executing function: greet\n",
+            "Hello, Alice!\n",
+            "Another Message - Executing function: add\n",
+            "Result of add: 8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "HqCzEYRLcAH9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q54= Create two decorators,and apply them to a single function. Ensure that they execute in the order they are applied."
+      ],
+      "metadata": {
+        "id": "sVJB-yJ_Gaz5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def decorator_one(func):\n",
+        "    \"\"\"First decorator that prints a message before and after the function execution.\"\"\"\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(\"Decorator One: Before the function\")\n",
+        "        result = func(*args, **kwargs)\n",
+        "        print(\"Decorator One: After the function\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "def decorator_two(func):\n",
+        "    \"\"\"Second decorator that prints a message before and after the function execution.\"\"\"\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(\"Decorator Two: Before the function\")\n",
+        "        result = func(*args, **kwargs)\n",
+        "        print(\"Decorator Two: After the function\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "# Example usage:\n",
+        "@decorator_one\n",
+        "@decorator_two\n",
+        "def example_function():\n",
+        "    print(\"Executing the main function\")\n",
+        "\n",
+        "example_function()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8u6tmveFZXQ4",
+        "outputId": "b3e4900b-41c4-4631-da09-4485cefd382c"
+      },
+      "execution_count": 362,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Decorator One: Before the function\n",
+            "Decorator Two: Before the function\n",
+            "Executing the main function\n",
+            "Decorator Two: After the function\n",
+            "Decorator One: After the function\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q55= Modify the decorator to accept and pass function arguments to the wrapped function."
+      ],
+      "metadata": {
+        "id": "0wm0HlXgLP7E"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def print_message_decorator(func):\n",
+        "    \"\"\"Decorator to print a message and pass arguments to the wrapped function.\"\"\"\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(f\"Function '{func.__name__}' is called with arguments: {args} {kwargs}\")\n",
+        "        return func(*args, **kwargs)\n",
+        "    return wrapper\n",
+        "\n",
+        "# Example usage:\n",
+        "@print_message_decorator\n",
+        "def greet(name, greeting=\"Hello\"):\n",
+        "    print(f\"{greeting}, {name}!\")\n",
+        "\n",
+        "@print_message_decorator\n",
+        "def add(a, b):\n",
+        "    return a + b\n",
+        "\n",
+        "# Calling the decorated functions\n",
+        "greet(\"Alice\", greeting=\"Hi\")\n",
+        "result = add(5, 7)\n",
+        "print(f\"Result of add: {result}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6OogoB6NYs2M",
+        "outputId": "47661301-0593-4bca-9cdb-a899bff6217b"
+      },
+      "execution_count": 358,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Function 'greet' is called with arguments: ('Alice',) {'greeting': 'Hi'}\n",
+            "Hi, Alice!\n",
+            "Function 'add' is called with arguments: (5, 7) {}\n",
+            "Result of add: 12\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q56= Create two decorator that preserves the metadata of the original function."
+      ],
+      "metadata": {
+        "id": "7poDtxitNAZ7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from functools import wraps\n",
+        "\n",
+        "def decorator_one(func):\n",
+        "    \"\"\"First decorator that preserves metadata.\"\"\"\n",
+        "    @wraps(func)\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(\"Decorator One: Before the function\")\n",
+        "        result = func(*args, **kwargs)\n",
+        "        print(\"Decorator One: After the function\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "def decorator_two(func):\n",
+        "    \"\"\"Second decorator that preserves metadata.\"\"\"\n",
+        "    @wraps(func)\n",
+        "    def wrapper(*args, **kwargs):\n",
+        "        print(\"Decorator Two: Before the function\")\n",
+        "        result = func(*args, **kwargs)\n",
+        "        print(\"Decorator Two: After the function\")\n",
+        "        return result\n",
+        "    return wrapper\n",
+        "\n",
+        "# Example usage:\n",
+        "@decorator_one\n",
+        "@decorator_two\n",
+        "def example_function(a, b):\n",
+        "    \"\"\"This is an example function.\"\"\"\n",
+        "    return a + b\n",
+        "\n",
+        "# Checking metadata\n",
+        "print(f\"Function name: {example_function.__name__}\")\n",
+        "print(f\"Function docstring: {example_function.__doc__}\")\n",
+        "result = example_function(5, 7)\n",
+        "print(f\"Result: {result}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CQl_DXITW69W",
+        "outputId": "ad9f2e4d-3c06-4d32-f947-001931d31553"
+      },
+      "execution_count": 351,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Function name: example_function\n",
+            "Function docstring: This is an example function.\n",
+            "Decorator One: Before the function\n",
+            "Decorator Two: Before the function\n",
+            "Decorator Two: After the function\n",
+            "Decorator One: After the function\n",
+            "Result: 12\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q57=Create a python class calculator with a static method add that takes in two numbers and returns their sum."
+      ],
+      "metadata": {
+        "id": "QXBVkaFROox1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Calculator:\n",
+        "   @staticmethod\n",
+        "   def add(a, b):\n",
+        "       \"\"\"Static method to return the sum of two numbers.\"\"\"\n",
+        "       return a + b\n",
+        "\n",
+        "\n",
+        "# Example usage:\n",
+        "result = Calculator.add(5, 7)  # Call the static method directly using the class\n",
+        "print(f\"The sum is: {result}\")\n",
+        "\n",
+        "# Static method can also be called via an instance:\n",
+        "calculator_instance = Calculator()\n",
+        "result_instance = calculator_instance.add(10, 15)\n",
+        "print(f\"The sum (via instance) is: {result_instance}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NF-mtoafT_eY",
+        "outputId": "4cfd9cfc-35e2-4525-87df-7555a478b5e7"
+      },
+      "execution_count": 336,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The sum is: 12\n",
+            "The sum (via instance) is: 25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q58= Create a python class Employee with a class method get_employee_count that returns the total number of employees created."
+      ],
+      "metadata": {
+        "id": "hci4QzMhNuIG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "   employee_count = 0  # Class attribute to track the number of employees\n",
+        "\n",
+        "   def __init__(self, name, position):\n",
+        "      \"\"\"Initialize an Employee instance with a name and position.\"\"\"\n",
+        "      self.name = name\n",
+        "      self.position = position\n",
+        "      Employee.employee_count += 1  # Increment the employee count when a new instance is created\n",
+        "class Employee:\n",
+        "   employee_count = 0  # Class attribute to track the number of employees\n",
+        "\n",
+        "   def __init__(self, name, position):\n",
+        "      \"\"\"Initialize an Employee instance with a name and position.\"\"\"\n",
+        "      self.name = name\n",
+        "      self.position = position\n",
+        "      Employee.employee_count += 1  # Increment the employee count when a new instance is created\n",
+        "\n",
+        "   @classmethod\n",
+        "   def get_employee_count(cls):\n",
+        "       \"\"\"Return the total number of employees created.\"\"\"\n",
+        "       return cls.employee_count\n",
+        "\n",
+        "# Example usage:\n",
+        "emp1 = Employee(\"Alice\", \"Developer\")\n",
+        "emp2 = Employee(\"Bob\", \"Designer\")\n",
+        "emp3 = Employee(\"Charlie\", \"Manager\")\n",
+        "\n",
+        "print(f\"Total Employees: {Employee.get_employee_count()}\")  # Access through class\n",
+        "print(f\"Total Employees (via instance): {emp1.get_employee_count()}\")  # Access through instance\n",
+        "\n",
+        "# Example usage:\n",
+        "emp1 = Employee(\"Alice\", \"Developer\")\n",
+        "emp2 = Employee(\"Bob\", \"Designer\")\n",
+        "emp3 = Employee(\"Charlie\", \"Manager\")\n",
+        "\n",
+        "print(f\"Total Employees: {Employee.get_employee_count()}\")  # Access through class\n",
+        "print(f\"Total Employees (via instance): {emp1.get_employee_count()}\")  # Access through instance"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dFZkbAliVDjk",
+        "outputId": "eb88519e-90ef-4564-9c40-7f5e048f4d18"
+      },
+      "execution_count": 349,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total Employees: 3\n",
+            "Total Employees (via instance): 3\n",
+            "Total Employees: 6\n",
+            "Total Employees (via instance): 6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q59= Create a python class stringFormatter with a static method reverse_string that takes a string as input and returns its reverse."
+      ],
+      "metadata": {
+        "id": "pMmgCuckd9Gp"
+      }
+    },
+    {
+      "source": [
+        "class StringFormatter:\n",
+        "    @staticmethod\n",
+        "    def reverse_string(input_string):\n",
+        "        \"\"\"Static method to reverse a given string.\"\"\"\n",
+        "        return input_string[::-1]\n",
+        "\n",
+        "\n",
+        "# Example usage:\n",
+        "reversed_string = StringFormatter.reverse_string(\"Hello, World!\")\n",
+        "print(f\"Reversed String: {reversed_string}\")\n",
+        "\n",
+        "# Static method can also be called via an instance:\n",
+        "formatter_instance = StringFormatter()\n",
+        "reversed_instance = formatter_instance.reverse_string(\"Python\")\n",
+        "print(f\"Reversed String (via instance): {reversed_instance}\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RMgxv1nBficB",
+        "outputId": "de87a599-409c-4fd0-eac4-add90552a026"
+      },
+      "execution_count": 388,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Reversed String: !dlroW ,olleH\n",
+            "Reversed String (via instance): nohtyP\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q60= Create a python class circle with a class method calculate_area that calculated the area of a circle given its radius."
+      ],
+      "metadata": {
+        "id": "I6771w8tfxkJ"
+      }
+    },
+    {
+      "source": [
+        "import math\n",
+        "\n",
+        "class Circle:\n",
+        "    @classmethod\n",
+        "    def calculate_area(cls, radius): # Corrected indentation here\n",
+        "        \"\"\"Class method to calculate the area of a circle given its radius.\"\"\"\n",
+        "        if radius < 0:\n",
+        "            raise ValueError(\"Radius cannot be negative.\")\n",
+        "        return math.pi * (radius ** 2) # Corrected indentation here\n",
+        "\n",
+        "\n",
+        "# Example usage:\n",
+        "area = Circle.calculate_area(5)  # Call the class method directly using the class\n",
+        "print(f\"Area of the circle: {area:.2f}\")\n",
+        "\n",
+        "# Class method can also be called via an instance:\n",
+        "circle_instance = Circle()\n",
+        "area_instance = circle_instance.calculate_area(7)\n",
+        "print(f\"Area of the circle (via instance): {area_instance:.2f}\") # Corrected indentation here"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zNPjR-Akg4GK",
+        "outputId": "ed94d81c-d2c3-4c90-b47a-766df2226784"
+      },
+      "execution_count": 390,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Area of the circle: 78.54\n",
+            "Area of the circle (via instance): 153.94\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q61= Create a python class Temperature converter with a static method celsius_to_fahenheit that converts Celsius to fahrenheit."
+      ],
+      "metadata": {
+        "id": "LH4k0cNQg8T0"
+      }
+    },
+    {
+      "source": [
+        "class TemperatureConverter:\n",
+        "    @staticmethod\n",
+        "    def celsius_to_fahrenheit(celsius):\n",
+        "        \"\"\"Static method to convert Celsius to Fahrenheit.\"\"\"\n",
+        "        return (celsius * 9/5) + 32\n",
+        "\n",
+        "\n",
+        "    # Example usage:\n",
+        "fahrenheit = TemperatureConverter.celsius_to_fahrenheit(25)  # Convert 25°C to Fahrenheit\n",
+        "print(f\"25°C is equal to {fahrenheit:.2f}°F\")\n",
+        "\n",
+        "    # Static method can also be called via an instance:\n",
+        "converter_instance = TemperatureConverter()\n",
+        "fahrenheit_instance = converter_instance.celsius_to_fahrenheit(-10)\n",
+        "print(f\"-10°C is equal to {fahrenheit_instance:.2f}°F\")"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qcJ_YVva3Nec",
+        "outputId": "b54b5181-6ca4-40cc-a139-a42cf67c3549"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "25°C is equal to 77.00°F\n",
+            "-10°C is equal to 14.00°F\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q62= What is the purpose of the__str__()method in python classes? Provide an example."
+      ],
+      "metadata": {
+        "id": "y53RQyrP3cq8"
+      }
+    },
+    {
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, age):\n",
+        "        self.name = name\n",
+        "        self.age = age  # Corrected indentation\n",
+        "\n",
+        "    def __str__(self):\n",
+        "        return f\"Person(name={self.name}, age={self.age})\"\n",
+        "\n",
+        "# Example usage:\n",
+        "p = Person(\"Alice\", 30)\n",
+        "print(p)  # Calls __str__()\n",
+        "print(str(p))  # Also calls __str__()"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9NVg4gtF4Ffe",
+        "outputId": "e9be712a-28fa-4984-ad18-d6e81acd5cb5"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Person(name=Alice, age=30)\n",
+            "Person(name=Alice, age=30)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q63= How does the__len__()method work in python? Provide an example."
+      ],
+      "metadata": {
+        "id": "f0ggZPFy4K6B"
+      }
+    },
+    {
+      "source": [
+        "class BookCollection:\n",
+        "    def __init__(self, books):\n",
+        "        self.books = books\n",
+        "\n",
+        "    def __len__(self):\n",
+        "        return len(self.books)\n",
+        "\n",
+        "# Example usage:\n",
+        "collection = BookCollection([\"Book 1\", \"Book 2\", \"Book 3\"])\n",
+        "print(len(collection))  # Calls __len__()"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Q3bkTUr_41KG",
+        "outputId": "7d1284d8-fd17-4fb8-c029-22b4043bbfc8"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q64= Explain the usage of the__add__() method in python classes.Provide an example."
+      ],
+      "metadata": {
+        "id": "jy-Zwn_Z44f6"
+      }
+    },
+    {
+      "source": [
+        "class Vector:\n",
+        "    def __init__(self, x, y):\n",
+        "        self.x = x\n",
+        "        self.y = y  # Corrected indentation\n",
+        "\n",
+        "    def __add__(self, other):\n",
+        "        if isinstance(other, Vector):\n",
+        "            return Vector(self.x + other.x, self.y + other.y)\n",
+        "        raise TypeError(\"Unsupported operand type(s) for +: 'Vector' and {}\".format(type(other)))\n",
+        "\n",
+        "    def __str__(self):\n",
+        "        return f\"Vector({self.x}, {self.y})\"\n",
+        "\n",
+        "# Example usage:\n",
+        "v1 = Vector(2, 3)\n",
+        "v2 = Vector(4, 5)\n",
+        "v3 = v1 + v2  # Calls __add__()\n",
+        "print(v3)"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "13XPVy305lBL",
+        "outputId": "54acce6f-7e6f-41a7-ea6b-c55642ad21bb"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vector(6, 8)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q65= What is the purpose of the__getitem__() method in python? Provide an example."
+      ],
+      "metadata": {
+        "id": "KSSxnu1Q5s0x"
+      }
+    },
+    {
+      "source": [
+        "class CustomList:\n",
+        "    def __init__(self, items):\n",
+        "        self.items = items\n",
+        "\n",
+        "    def __getitem__(self, index): # Corrected indentation here\n",
+        "        return self.items[index]\n",
+        "\n",
+        "# Example usage:\n",
+        "my_list = CustomList([10, 20, 30, 40])\n",
+        "print(my_list[0])  # Accesses the first element\n",
+        "print(my_list[2])  # Accesses the third element"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R7RCkDZ36kAe",
+        "outputId": "8e9cd420-4323-4df7-d456-f5d64765d8a8"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "30\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q66= Explain the usage of the__iter__()and__next__()method in python.provide an example using iterators."
+      ],
+      "metadata": {
+        "id": "vvqvuo6k6n6E"
+      }
+    },
+    {
+      "source": [
+        "class Counter:\n",
+        "    def __init__(self, start, end):\n",
+        "        self.current = start\n",
+        "        self.end = end  # Corrected indentation\n",
+        "\n",
+        "    def __iter__(self):\n",
+        "        \"\"\"Returns the iterator object itself.\"\"\"\n",
+        "        return self\n",
+        "\n",
+        "    def __next__(self):\n",
+        "        \"\"\"Returns the next value or raises StopIteration when done.\"\"\"\n",
+        "        if self.current <= self.end:\n",
+        "            value = self.current\n",
+        "            self.current += 1\n",
+        "            return value\n",
+        "        else:\n",
+        "            raise StopIteration\n",
+        "\n",
+        "# Example usage:\n",
+        "counter = Counter(1, 5)\n",
+        "for number in counter:\n",
+        "    print(number)"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GNO80YQF7f-U",
+        "outputId": "563ca7a1-f128-49d4-9701-e86f14c80dee"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q67= What is the purpose of a getter method in python? provide an example demonstrating the use of a getter method using property decorators."
+      ],
+      "metadata": {
+        "id": "rCI48sj-7kJG"
+      }
+    },
+    {
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, age):\n",
+        "        self._name = name  # Private attribute\n",
+        "        self._age = age    # Private attribute # Fixed indentation\n",
+        "\n",
+        "    @property\n",
+        "    def name(self):\n",
+        "        \"\"\"Getter for the name attribute.\"\"\"\n",
+        "        return self._name\n",
+        "\n",
+        "    @property\n",
+        "    def age(self):\n",
+        "        \"\"\"Getter for the age attribute.\"\"\"\n",
+        "        return self._age\n",
+        "\n",
+        "# Example usage:\n",
+        "person = Person(\"Alice\", 30)\n",
+        "print(person.name)  # Access the name using the getter\n",
+        "print(person.age)   # Access the age using the getter"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jhywIHoB8Rjq",
+        "outputId": "e0af38c3-4f09-48b0-aac0-f1b4bad886ec"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n",
+            "30\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q68=Explain the role of setter method in python.Demonstrate to use a setter method to modify a class attribute using property decorators."
+      ],
+      "metadata": {
+        "id": "e-IPEcFj8WR7"
+      }
+    },
+    {
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, age):\n",
+        "        self._name = name  # Private attribute\n",
+        "        self._age = age    # Private attribute\n",
+        "\n",
+        "    @property\n",
+        "    def name(self):\n",
+        "        \"\"\"Getter for the name attribute.\"\"\"\n",
+        "        return self._name\n",
+        "\n",
+        "    @name.setter\n",
+        "    def name(self, value):\n",
+        "        \"\"\"Setter for the name attribute.\"\"\"\n",
+        "        if not value:\n",
+        "            raise ValueError(\"Name cannot be empty.\")\n",
+        "        self._name = value\n",
+        "\n",
+        "    @property\n",
+        "    def age(self):\n",
+        "        \"\"\"Getter for the age attribute.\"\"\"\n",
+        "        return self._age\n",
+        "\n",
+        "    @age.setter\n",
+        "    def age(self, value):\n",
+        "        \"\"\"Setter for the age attribute.\"\"\"\n",
+        "        if value < 0:\n",
+        "            raise ValueError(\"Age cannot be negative.\")\n",
+        "        self._age = value\n",
+        "\n",
+        "# Example usage:\n",
+        "person = Person(\"Alice\", 30)\n",
+        "print(person.name)  # Output: Alice\n",
+        "print(person.age)   # Output: 30\n",
+        "\n",
+        "# Modify attributes using setters:\n",
+        "person.name = \"Bob\"\n",
+        "person.age = 25\n",
+        "print(person.name)  # Output: Bob\n",
+        "print(person.age)   # Output: 25\n",
+        "\n",
+        "# Try invalid values (will raise exceptions):\n",
+        "# person.name = \"\"    # Raises ValueError: Name cannot be empty.\n",
+        "# person.age = -5     # Raises ValueError: Age cannot be negative."
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "s4bG1KSr9loc",
+        "outputId": "cfc83c6d-5ad2-40fe-c40a-c5a2083bbc66"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alice\n",
+            "30\n",
+            "Bob\n",
+            "25\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q69= What is the purpose of the @property decorator in python? Provide an example illustrating its usage."
+      ],
+      "metadata": {
+        "id": "AP6KCSbA9rHo"
+      }
+    },
+    {
+      "source": [
+        "class Rectangle:\n",
+        "    def __init__(self, width, height):\n",
+        "        self._width = width  # Private attribute\n",
+        "        self._height = height  # Private attribute\n",
+        "\n",
+        "    @property\n",
+        "    def width(self):\n",
+        "        \"\"\"Getter for the width attribute.\"\"\"\n",
+        "        return self._width\n",
+        "\n",
+        "    @width.setter\n",
+        "    def width(self, value):\n",
+        "        \"\"\"Setter for the width attribute with validation.\"\"\"\n",
+        "        if value <= 0:\n",
+        "            raise ValueError(\"Width must be greater than zero.\")\n",
+        "        self._width = value\n",
+        "\n",
+        "    @property\n",
+        "    def height(self):\n",
+        "        \"\"\"Getter for the height attribute.\"\"\"\n",
+        "        return self._height\n",
+        "\n",
+        "    @height.setter\n",
+        "    def height(self, value):\n",
+        "        \"\"\"Setter for the height attribute with validation.\"\"\"\n",
+        "        if value <= 0:\n",
+        "            raise ValueError(\"Height must be greater than zero.\")\n",
+        "        self._height = value\n",
+        "\n",
+        "    @property\n",
+        "    def area(self):\n",
+        "        \"\"\"Read-only property to calculate the area.\"\"\"\n",
+        "        return self._width * self._height\n",
+        "\n",
+        "# Example usage:\n",
+        "rect = Rectangle(4, 5)\n",
+        "print(\"Width:\", rect.width)   # Access width using the getter\n",
+        "print(\"Height:\", rect.height) # Access height using the getter\n",
+        "print(\"Area:\", rect.area)     # Access the read-only area property\n",
+        "\n",
+        "# Modify width and height using the setter\n",
+        "rect.width = 6\n",
+        "rect.height = 7\n",
+        "print(\"Updated Area:\", rect.area)\n",
+        "\n",
+        "# Invalid values raise exceptions\n",
+        "# rect.width = -2  # Raises ValueError: Width must be greater than zero."
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Hv4U6uBg-tma",
+        "outputId": "cbefdad9-7ee9-4d4e-d892-832e35e55a14"
+      },
+      "execution_count": 38,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Width: 4\n",
+            "Height: 5\n",
+            "Area: 20\n",
+            "Updated Area: 42\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q70= Explain the uses of the @deleter decorator in python perperty decorators.Provide a code example demonstrating its application."
+      ],
+      "metadata": {
+        "id": "MDsx-vgt-2Xh"
+      }
+    },
+    {
+      "source": [
+        "class Person:\n",
+        "    def __init__(self, name, age):\n",
+        "        self._name = name  # Private attribute\n",
+        "        self._age = age    # Private attribute # Fixed indentation\n",
+        "\n",
+        "    @property\n",
+        "    def name(self):\n",
+        "        \"\"\"Getter for the name attribute.\"\"\"\n",
+        "        return self._name\n",
+        "\n",
+        "    @name.setter\n",
+        "    def name(self, value):\n",
+        "        \"\"\"Setter for the name attribute.\"\"\"\n",
+        "        if not value:\n",
+        "            raise ValueError(\"Name cannot be empty.\")\n",
+        "        self._name = value\n",
+        "\n",
+        "    @name.deleter\n",
+        "    def name(self):\n",
+        "        \"\"\"Deleter for the name attribute.\"\"\"\n",
+        "        print(\"Deleting name...\")\n",
+        "        self._name = None\n",
+        "\n",
+        "    @property\n",
+        "    def age(self):\n",
+        "        \"\"\"Getter for the age attribute.\"\"\"\n",
+        "        return self._age\n",
+        "\n",
+        "    @age.setter\n",
+        "    def age(self, value):\n",
+        "        \"\"\"Setter for the age attribute.\"\"\"\n",
+        "        if value < 0:\n",
+        "            raise ValueError(\"Age cannot be negative.\")\n",
+        "        self._age = value\n",
+        "\n",
+        "    @age.deleter\n",
+        "    def age(self):\n",
+        "        \"\"\"Deleter for the age attribute.\"\"\"\n",
+        "        print(\"Deleting age...\")\n",
+        "        self._age = None\n",
+        "\n",
+        "# Example usage:\n",
+        "person = Person(\"Alice\", 30)\n",
+        "print(\"Name:\", person.name)  # Access name\n",
+        "print(\"Age:\", person.age)    # Access age\n",
+        "\n",
+        "# Delete attributes using deleter\n",
+        "del person.name\n",
+        "del person.age\n",
+        "\n",
+        "print(\"Name after deletion:\", person.name)  # None\n",
+        "print(\"Age after deletion:\", person.age)    # None"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uWe08HBmAESj",
+        "outputId": "6e118c81-74be-4b4b-8dfc-d18085d8b0b8"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name: Alice\n",
+            "Age: 30\n",
+            "Deleting name...\n",
+            "Deleting age...\n",
+            "Name after deletion: None\n",
+            "Age after deletion: None\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q71= How does encapsulation relate to property decorators in python? Provide an example showcasing encapsulation using property decorators."
+      ],
+      "metadata": {
+        "id": "rKdmpojFAIIt"
+      }
+    },
+    {
+      "source": [
+        "class BankAccount:\n",
+        "    def __init__(self, account_number, balance):\n",
+        "        self._account_number = account_number  # Private attribute\n",
+        "        self._balance = balance                # Private attribute # Corrected indentation - removed extra spaces\n",
+        "\n",
+        "    @property\n",
+        "    def account_number(self):\n",
+        "        \"\"\"Getter for account_number.\"\"\"\n",
+        "        return self._account_number\n",
+        "\n",
+        "    @property\n",
+        "    def balance(self):\n",
+        "        \"\"\"Getter for balance.\"\"\"\n",
+        "        return self._balance\n",
+        "\n",
+        "    @balance.setter\n",
+        "    def balance(self, amount):\n",
+        "        \"\"\"Setter for balance with validation.\"\"\"\n",
+        "        if amount < 0:\n",
+        "            raise ValueError(\"Balance cannot be negative.\")\n",
+        "        self._balance = amount\n",
+        "\n",
+        "    @balance.deleter\n",
+        "    def balance(self):\n",
+        "        \"\"\"Deleter for balance to reset it to zero.\"\"\"\n",
+        "        print(\"Resetting balance to zero...\")\n",
+        "        self._balance = 0\n",
+        "\n",
+        "    # Example usage:\n",
+        "account = BankAccount(\"123456\", 1000)\n",
+        "\n",
+        "# Access balance using the getter\n",
+        "print(\"Account Number:\", account.account_number)\n",
+        "print(\"Balance:\", account.balance)\n",
+        "\n",
+        "# Modify balance using the setter\n",
+        "account.balance = 2000\n",
+        "print(\"Updated Balance:\", account.balance)\n",
+        "\n",
+        "# Delete balance using the deleter\n",
+        "del account.balance\n",
+        "print(\"Balance after reset:\", account.balance)"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HcTSWpHaBgze",
+        "outputId": "c7cd6fa3-a7fd-46ee-d157-d360fbb863f1"
+      },
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account Number: 123456\n",
+            "Balance: 1000\n",
+            "Updated Balance: 2000\n",
+            "Resetting balance to zero...\n",
+            "Balance after reset: 0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
